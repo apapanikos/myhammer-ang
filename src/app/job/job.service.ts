@@ -1,6 +1,6 @@
 import { Injectable,EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Job } from './job.model';
+import { Job } from './job.interface';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -20,8 +20,7 @@ export class JobService {
   public getJobs(): Observable<Job[]> {
     return this.http.get('./assets/jobs.json').pipe(map(
        res => {
-         console.log(res)
-         return res.body as Job[]
+         return res['body'] as Job[]
        }
     ));
 }

@@ -2,11 +2,10 @@
   <h1>Jobs list</h1>
   <ul>
     <li 
-    *ngFor="let job of jobs"
+    *ngFor="let job of (jobs$ | async)"
     (click)="onSelected(job)">
-    {{job.title}}
-    {{job.city}}
-    {{job.state}}
+    {{job?.title}}
+    {{job?.city}}
     </li>
   </ul>
 </div>

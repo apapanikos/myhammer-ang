@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { JobService } from '../job.service';
-import { Job } from '../job.model';
+import { Job } from '../job.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-jobs',
@@ -9,7 +10,7 @@ import { Job } from '../job.model';
 })
 export class JobsComponent implements OnInit {
 
-  public jobs : Job [];
+  public jobs$ : Observable<Job []>;
 
 
   constructor(
@@ -17,16 +18,14 @@ export class JobsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.JobService.getJobs().subscribe(
-    data => { 
-      this.jobs = data as Job []
-      console.log(data)
-    },
-    err => console.error(err),
-    () => console.log('done loading jobs'));
+
+    this.jobs$ = this.JobService.getJobs()
+
   }
-  onSelected(selection) {
-    console.log(selection)
+
+  onSelected(job: Job) {
+
+    this.JobService.shareJobDetails(job)
   }
 
 }
