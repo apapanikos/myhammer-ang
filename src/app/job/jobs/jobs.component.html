@@ -1,0 +1,12 @@
+<div class="jobs">
+  <h1>Jobs list</h1>
+  <ul>
+    <li 
+    *ngFor="let job of jobs"
+    (click)="onSelected(job)">
+    {{job.title}}
+    {{job.city}}
+    {{job.state}}
+    </li>
+  </ul>
+</div>

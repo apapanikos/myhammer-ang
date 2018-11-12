@@ -1,10 +1,22 @@
 import { Component } from '@angular/core';
+import {JobService} from './job/job.service';
+
+
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'JobPreview';
+
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+ 
+
 }
