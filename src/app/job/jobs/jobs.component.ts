@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class JobsComponent implements OnInit {
 
   public jobs$ : Observable<Job []>;
-
+  
 
   constructor(
     private JobService : JobService 
@@ -26,6 +26,7 @@ export class JobsComponent implements OnInit {
   onSelected(job: Job) {
 
     this.JobService.shareJobDetails(job)
+
   }
 
 }

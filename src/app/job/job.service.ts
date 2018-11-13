@@ -2,7 +2,8 @@ import { Injectable,EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Job } from './job.interface';
 import { Observable, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map,filter } from 'rxjs/operators';
+
 
 
 
@@ -18,11 +19,15 @@ export class JobService {
   constructor(private http:HttpClient) {
   }
   public getJobs(): Observable<Job[]> {
-    return this.http.get('./assets/jobs.json').pipe(map(
-       res => {
-         return res['body'] as Job[]
-       }
-    ));
+    return this.http.get('./assets/jobs.json').pipe(
+      map(
+        //Filter and get only active jobs
+       res => 
+         res['body'].filter(active => active.state === "active") as Job[]
+       
+      )
+    );
+    
 }
 
 //share job details
@@ -33,4 +38,5 @@ public shareJobDetails(job: Job){
 public getJobDetails(): Observable<Job>{
   return this.jobDetails$
 }
+
 }

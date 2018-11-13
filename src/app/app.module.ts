@@ -8,16 +8,21 @@ import { JobsComponent } from './job/jobs/jobs.component';
 import { JobDetailsComponent } from './job/job-details/job-details.component';
 import { JobService } from './job/job.service';
 
+import { MaterialModule } from './material.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
     JobComponent,
     JobsComponent,
-    JobDetailsComponent
+    JobDetailsComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [JobService],
   bootstrap: [AppComponent]

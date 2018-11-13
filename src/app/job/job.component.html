@@ -1,4 +1,10 @@
-<div>
-  <app-jobs></app-jobs>
-  <app-job-details></app-job-details>
+<div class="job-app">
+  <mat-grid-list cols="2" rowHeight = "fit">
+    <mat-grid-tile>
+      <app-jobs></app-jobs>
+    </mat-grid-tile>
+    <mat-grid-tile style="background-color:#f1f1f1;">
+     <app-job-details></app-job-details>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

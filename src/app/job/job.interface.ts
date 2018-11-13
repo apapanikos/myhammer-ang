@@ -5,6 +5,8 @@
   city: string;
   thumbnail: string;
   attachments: string[];
+  counter: string[];
+  messages:string;
   is_awarded: boolean;
   state: string;
   description: string;

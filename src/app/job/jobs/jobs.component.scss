@@ -1,7 +1,19 @@
+
+
 ul{
     list-style: none;
 }
 
-.jobs{
-    min-height: 50vh;
+.job-list{
+    mat-nav-list{
+        text-align:left;
+        h3{
+            font-weight:bold;
+        }
+        p{
+            color:rgba(0,0,0,.54);
+        }
+    }
 }
+
+

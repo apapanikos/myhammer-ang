@@ -13,6 +13,7 @@ export class JobDetailsComponent implements OnInit {
 
   job$: Observable<Job>
 
+
   constructor(
     private JobService : JobService
   ) { }

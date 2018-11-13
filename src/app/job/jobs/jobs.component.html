@@ -1,11 +1,20 @@
-<div class="jobs">
-  <h1>Jobs list</h1>
-  <ul>
-    <li 
-    *ngFor="let job of (jobs$ | async)"
-    (click)="onSelected(job)">
-    {{job?.title}}
-    {{job?.city}}
-    </li>
-  </ul>
-</div>
+
+<div class="job-list">
+  <div class="job-list__title">
+    <h2>Active jobs</h2>
+  </div>
+    <mat-nav-list>
+      <mat-list-item
+       *ngFor="let job of (jobs$ | async) let lastItem = last;"
+      (click)="onSelected(job)">
+        <img matListAvatar src="{{job?.thumbnail}}" alt="job1">
+        <h3 matLine>  
+          {{job?.title}} 
+        </h3>
+        <p mat-line>
+            <span>{{job?.city}} </span>
+        </p>
+        <mat-divider [inset]="true" *ngIf="!lastItem"></mat-divider>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>

@@ -1,6 +1,27 @@
-<div class="details">
-  <h1>Job Details</h1>
-  <div>
-    {{(job$ | async)?.title}}
+<div class="job-details-wrapper">
+  <div class="job-details">
+      <div class="job-details__title">
+          <h2>Job Details</h2>
+      </div>
+      <mat-card *ngIf="(job$ | async) as job; else select">
+          <mat-card-header>
+            <img mat-card-avatar src="{{job.thumbnail}}">
+            <mat-card-title>{{job.title}}</mat-card-title>
+            <mat-card-subtitle>{{job.city}}, {{job.zip_code}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <h4><span>Description:</span></h4>
+            <p>{{job.description}}</p>
+          </mat-card-content>
+          <mat-divider></mat-divider>
+          <mat-card-actions>
+              <span>Messages:</span>
+              <div class="icon-cont">
+                <mat-icon matBadge="{{job.counter.messages_unread}}" matBadgeColor="warn">email</mat-icon>
+                <mat-icon matBadge="{{job.counter.messages_total}}" matBadgeColor="primary">mail_outline</mat-icon>
+              </div>
+          </mat-card-actions>
+       </mat-card>
+       <ng-template #select> <h3> No job is selected...</h3></ng-template>
   </div>
 </div>

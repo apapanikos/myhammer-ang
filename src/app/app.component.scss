@@ -1,0 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700');
+
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+.app-title{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 2;
+
+    h1{
+       font-size: 5rem;
+    }
+}
