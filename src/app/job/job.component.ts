@@ -8,11 +8,18 @@ import { JobService } from './job.service';
   providers: [JobService]
 })
 export class JobComponent implements OnInit {
+
+  //Change grid orientation
+  breakpoint: number;
   
   constructor(private JobService: JobService) { }
 
   ngOnInit() {
-
+    this.breakpoint = (window.innerWidth <= 700) ? 1 : 2;
   }
 
+   
+  onResize(event) {
+    this.breakpoint = (event.target.innerWidth <= 700) ? 1 : 2;
+  }
 }

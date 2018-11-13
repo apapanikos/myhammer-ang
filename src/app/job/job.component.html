@@ -1,5 +1,5 @@
 <div class="job-app">
-  <mat-grid-list cols="2" rowHeight = "fit">
+  <mat-grid-list cols="2" rowHeight = "fit" [cols]="breakpoint" (window:resize)="onResize($event)">
     <mat-grid-tile>
       <app-jobs></app-jobs>
     </mat-grid-tile>

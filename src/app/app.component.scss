@@ -5,14 +5,8 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.app-title{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index: 2;
 
-    h1{
-       font-size: 5rem;
-    }
-}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+} 

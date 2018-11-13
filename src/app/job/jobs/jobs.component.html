@@ -8,11 +8,12 @@
        *ngFor="let job of (jobs$ | async) let lastItem = last;"
       (click)="onSelected(job)">
         <img matListAvatar src="{{job?.thumbnail}}" alt="job1">
-        <h3 matLine>  
-          {{job?.title}} 
+        <h3 matLine>
+          Title:  
+          <span>" {{job?.title}} "</span>
         </h3>
         <p mat-line>
-            <span>{{job?.city}} </span>
+            <span>{{job?.city}}, {{job?.zip_code}} </span>
         </p>
         <mat-divider [inset]="true" *ngIf="!lastItem"></mat-divider>
       </mat-list-item>

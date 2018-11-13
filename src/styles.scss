@@ -8,10 +8,14 @@ $primary-color: #03dac6;
 
 
 body, html {
-    height:100%;
+    margin:0;
+    height:100vh;
 }
 body{
-    margin:0;
     padding:0;
     // background-color: $primary-color;
 }
+
+@media only screen and (max-width: 600px) {
+
+} 

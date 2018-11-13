@@ -27,3 +27,16 @@
         }
     }
 }
+
+@media only screen and (max-width: 600px) {
+
+    .job-details-wrapper{
+        .job-details{
+
+            mat-card{
+
+            }
+        }
+
+    }
+} 
