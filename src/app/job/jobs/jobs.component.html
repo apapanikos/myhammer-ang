@@ -3,9 +3,9 @@
   <div class="job-list__title">
     <h2>Active jobs</h2>
   </div>
-    <mat-nav-list>
+    <mat-nav-list>  <!--Render the active job items with async pipe-->
       <mat-list-item
-       *ngFor="let job of (jobs$ | async) let lastItem = last;"
+       *ngFor="let job of (jobs$ | async) let lastItem = last;"  
       (click)="onSelected(job)">
         <img matListAvatar src="{{job?.thumbnail}}" alt="job1">
         <h3 matLine>
@@ -14,8 +14,8 @@
         </h3>
         <p mat-line>
             <span>{{job?.city}}, {{job?.zip_code}} </span>
-        </p>
-        <mat-divider [inset]="true" *ngIf="!lastItem"></mat-divider>
+        </p> 
+        <mat-divider [inset]="true" *ngIf="!lastItem"></mat-divider> <!--Check if last item in order not to render divider after last job item-->
       </mat-list-item>
     </mat-nav-list>
   </div>

@@ -1,3 +1,4 @@
+ //Interface for Observable Job
  export interface Job {
   id: string;
   title: string;

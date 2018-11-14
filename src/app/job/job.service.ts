@@ -19,6 +19,8 @@ export class JobService {
   constructor(private http:HttpClient) {
   }
   public getJobs(): Observable<Job[]> {
+
+    //Get json attributes as Observable Job
     return this.http.get('./assets/jobs.json').pipe(
       map(
         //Filter and get only active jobs
@@ -30,13 +32,13 @@ export class JobService {
     
 }
 
-//share job details
-public shareJobDetails(job: Job){
-   this.jobDetailsSubject.next(job)
-}
+  //share job details
+  public shareJobDetails(job: Job){
+    this.jobDetailsSubject.next(job)
+  }
 
-public getJobDetails(): Observable<Job>{
-  return this.jobDetails$
-}
+  public getJobDetails(): Observable<Job>{
+    return this.jobDetails$
+  }
 
 }

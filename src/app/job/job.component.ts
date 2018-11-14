@@ -15,11 +15,15 @@ export class JobComponent implements OnInit {
   constructor(private JobService: JobService) { }
 
   ngOnInit() {
+    //Checking the breakpoint width for change orientation
     this.breakpoint = (window.innerWidth <= 700) ? 1 : 2;
+
   }
 
    
   onResize(event) {
+
     this.breakpoint = (event.target.innerWidth <= 700) ? 1 : 2;
+    
   }
 }

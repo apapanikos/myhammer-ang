@@ -4,7 +4,6 @@ import {
   MatGridListModule,
   MatListModule,
   MatButtonModule,
-  MatButtonToggleModule,
   MatBadgeModule,
   MatIconModule,
   MatCardModule
@@ -15,7 +14,6 @@ import {
     MatGridListModule,
     MatListModule,
     MatButtonModule,
-    MatButtonToggleModule,
     MatBadgeModule,
     MatIconModule,
     MatCardModule
@@ -24,7 +22,6 @@ import {
     MatGridListModule,
     MatListModule,
     MatButtonModule,
-    MatButtonToggleModule,
     MatBadgeModule,
     MatIconModule,
     MatCardModule

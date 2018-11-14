@@ -18,13 +18,15 @@ export class JobsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    
+    //Call Job Service function to fetch active job data
     this.jobs$ = this.JobService.getJobs()
 
   }
 
   onSelected(job: Job) {
 
+    //On select a job item, call Job Service to share job details for an item
     this.JobService.shareJobDetails(job)
 
   }

@@ -19,6 +19,8 @@ export class JobDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    //Call Job Service function to fetch Job Details for a job item
     this.job$ = this.JobService.getJobDetails()
   }
 
