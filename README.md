@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Clone directory or download as zip
 
-clone:  https://github.com/apapanikos/MyHammer-ang.git
+git clone https://github.com/apapanikos/MyHammer-ang.git
 
 ## Development server
 
